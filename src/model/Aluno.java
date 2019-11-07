@@ -150,4 +150,9 @@ public class Aluno implements Serializable{
 		return true;
 	}
 	
+	public String toJson() {
+		String json = "{id: '"+this.id+"',nome: '"+this.nome+"',email: '"+this.email+"', cpf: '"+this.cpf+"', telefone: '"+this.telefone+"', unidade: '"+this.unidade.getNome()+"', professor: '"+this.professor.getNome()+"', estado: "+this.estado+"}";
+		return json;
+	}
+	
 }
