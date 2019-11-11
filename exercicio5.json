@@ -1,0 +1,12 @@
+{
+    "id": 5,
+    "nome": "Agachamento Completo",
+    "repeticoes": 30,
+    "tipoExercicio": "PERNAS",
+    "aparelho": {
+        "id": 5,
+        "nome": "Smith",
+        "tipoAparelho": "MUSCULACAO",
+        "tipoExercicio": "PERNAS"
+    }
+}

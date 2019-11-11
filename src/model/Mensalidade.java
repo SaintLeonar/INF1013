@@ -7,17 +7,18 @@ public class Mensalidade implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
-	private Date mes;
-	private Integer valor;
-	private Aluno aluno;
+	private Date data;
+	private Float valor;
+	
+	private transient Aluno aluno;
 	private Pagamento pagamento;
 	
 	public Mensalidade() {}
 
-	public Mensalidade(Integer id, Date mes, Integer valor, Aluno aluno, Pagamento pagamento) {
+	public Mensalidade(Integer id, Date data, Float valor, Aluno aluno, Pagamento pagamento) {
 		super();
 		this.id = id;
-		this.mes = mes;
+		this.data = data;
 		this.valor = valor;
 		this.aluno = aluno;
 		this.pagamento = pagamento;
@@ -32,18 +33,18 @@ public class Mensalidade implements Serializable{
 	}
 
 	public Date getMes() {
-		return mes;
+		return data;
 	}
 
-	public void setMes(Date mes) {
-		this.mes = mes;
+	public void setMes(Date data) {
+		this.data = data;
 	}
 
-	public Integer getValor() {
+	public Float getValor() {
 		return valor;
 	}
 
-	public void setValor(Integer valor) {
+	public void setValor(Float valor) {
 		this.valor = valor;
 	}
 

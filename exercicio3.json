@@ -1,0 +1,12 @@
+{
+    "id": 3,
+    "nome": "Remada Aberta",
+    "repeticoes": 30,
+    "tipoExercicio": "COSTAS",
+    "aparelho": {
+        "id": 3,
+        "nome": "Remada Máquina",
+        "tipoAparelho": "MUSCULACAO",
+        "tipoExercicio": "COSTAS"
+    }
+}

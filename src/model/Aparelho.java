@@ -12,9 +12,10 @@ public class Aparelho implements Serializable{
 	
 	private Integer id;
 	private String nome;
-	private Integer tipoAparelho;
-	private Integer tipoExercicio;
-	private List<Exercicio> exercicios = new ArrayList<>();
+	private TipoAparelho tipoAparelho;
+	private TipoExercicio tipoExercicio;
+	
+	private transient List<Exercicio> exercicios = new ArrayList<>();
 	
 	public Aparelho() {}
 
@@ -22,8 +23,8 @@ public class Aparelho implements Serializable{
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.tipoAparelho = tipoAparelho.getCod();
-		this.tipoExercicio = tipoExercicio.getCod();
+		this.tipoAparelho = tipoAparelho;
+		this.tipoExercicio = tipoExercicio;
 	}
 
 	public Integer getId() {
@@ -43,19 +44,19 @@ public class Aparelho implements Serializable{
 	}
 
 	public TipoAparelho getTipoAparelho() {
-		return TipoAparelho.toEnum(tipoAparelho);
+		return tipoAparelho;
 	}
 
 	public void setTipoAparelho(TipoAparelho tipoAparelho) {
-		this.tipoAparelho = tipoAparelho.getCod();
+		this.tipoAparelho = tipoAparelho;
 	}
 
 	public TipoExercicio getTipoExercicio() {
-		return TipoExercicio.toEnum(tipoExercicio);
+		return tipoExercicio;
 	}
 
 	public void setTipoExercicio(TipoExercicio tipoExercicio) {
-		this.tipoExercicio = tipoExercicio.getCod();
+		this.tipoExercicio = tipoExercicio;
 	}
 
 	public List<Exercicio> getExercicios() {

@@ -4,13 +4,19 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
+
 public class Unidade implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
 	private String nome;
-	private List<Aluno> alunos = new ArrayList<>();
-	private List<Professor> professores = new ArrayList<>();
+	
+	@Expose(serialize = false, deserialize = false) // Protegendo contra serialização Ciclica
+	private transient List<Aluno> alunos = new ArrayList<>();
+	
+	@Expose(serialize = false, deserialize = false) // Protegendo contra serialização Ciclica
+	private transient List<Professor> professores = new ArrayList<>();
 
 	public Unidade() {}
 	

@@ -11,9 +11,12 @@ public class SerieEspecificada implements Serializable{
 	private Integer id;
 	private Date dataInicio;
 	private Date dataFim;
-	private Aluno aluno;
+	
+	private transient Aluno aluno;
 	private Professor professor;
-	private List<SerieRealizada> seriesRealizadas = new ArrayList<>();
+	
+	private transient List<SerieRealizada> seriesRealizadas = new ArrayList<>();
+	private List<Exercicio> exercicios = new ArrayList<>(); 
 	
 	public SerieEspecificada() {}
 
@@ -72,6 +75,14 @@ public class SerieEspecificada implements Serializable{
 
 	public void setSeriesRealizadas(List<SerieRealizada> seriesRealizadas) {
 		this.seriesRealizadas = seriesRealizadas;
+	}
+	
+	public List<Exercicio> getExercicios() {
+		return exercicios;
+	}
+
+	public void setExercicios(List<Exercicio> exercicios) {
+		this.exercicios = exercicios;
 	}
 
 	@Override

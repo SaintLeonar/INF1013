@@ -1,8 +1,11 @@
 package model;
 
+import java.io.BufferedReader;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.google.gson.Gson;
 
 import model.enums.EstadoConta;
 
@@ -15,16 +18,17 @@ public class Aluno implements Serializable{
 	private String cpf;
 	private String telefone;
 	private Unidade unidade;
+	
 	private Professor professor;
 	private List<Mensalidade> mensalidades = new ArrayList<>();
 	private List<SerieRealizada> serieRealizada = new ArrayList<>();
 	private SerieEspecificada serieEspecificada;
-	private Integer estado;
+	private EstadoConta estadoConta;
 	
 	public Aluno() {}
 
 	public Aluno(Integer id, String nome, String email, String cpf, String telefone, Unidade unidade,
-			Professor professor, SerieEspecificada serieEspecificada, EstadoConta estado) {
+			Professor professor, SerieEspecificada serieEspecificada, EstadoConta estadoConta) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -34,7 +38,7 @@ public class Aluno implements Serializable{
 		this.unidade = unidade;
 		this.professor = professor;
 		this.serieEspecificada = serieEspecificada;
-		this.estado = estado.getCod();
+		this.estadoConta = estadoConta;
 	}
 
 	public Integer getId() {
@@ -116,13 +120,13 @@ public class Aluno implements Serializable{
 	public void setSerieEspecificada(SerieEspecificada serieEspecificada) {
 		this.serieEspecificada = serieEspecificada;
 	}
-	
+
 	public EstadoConta getEstado() {
-		return EstadoConta.toEnum(estado);
+		return estadoConta;
 	}
 
-	public void setEstado(EstadoConta estado) {
-		this.estado = estado.getCod();
+	public void setEstado(EstadoConta estadoConta) {
+		this.estadoConta = estadoConta;
 	}
 
 	@Override
@@ -150,9 +154,27 @@ public class Aluno implements Serializable{
 		return true;
 	}
 	
-	public String toJson() {
-		String json = "{id: '"+this.id+"',nome: '"+this.nome+"',email: '"+this.email+"', cpf: '"+this.cpf+"', telefone: '"+this.telefone+"', unidade: '"+this.unidade.getNome()+"', professor: '"+this.professor.getNome()+"', estado: "+this.estado+"}";
-		return json;
+	public String serializeAluno(Aluno aluno)
+	{
+		Gson gson = new Gson();
+		return gson.toJson(aluno);
 	}
 	
+	public static void deserializeAluno(BufferedReader alunoJson, Aluno alunoNovo)
+	{
+		Gson gson = new Gson();
+		Aluno aluno = gson.fromJson(alunoJson, Aluno.class);
+		
+		alunoNovo.id = aluno.id;
+		alunoNovo.nome = aluno.nome;
+		alunoNovo.email = aluno.email;
+		alunoNovo.cpf = aluno.cpf;
+		alunoNovo.telefone = aluno.telefone;
+		alunoNovo.unidade = aluno.unidade;
+		alunoNovo.professor = aluno.professor;
+		alunoNovo.estadoConta = aluno.estadoConta;
+		alunoNovo.setMensalidades(aluno.mensalidades);
+		alunoNovo.setSerieEspecificada(aluno.serieEspecificada);
+		alunoNovo.setSerieRealizada(aluno.serieRealizada);
+	}
 }

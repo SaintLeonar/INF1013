@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "nome": "Supino Máquina",
+    "repeticoes": 30,
+    "tipoExercicio": "PEITORAIS",
+    "aparelho": {
+        "id": 1,
+        "nome": "Supino Máquina",
+        "tipoAparelho": "MUSCULACAO",
+        "tipoExercicio": "PEITORAIS"
+    }
+}

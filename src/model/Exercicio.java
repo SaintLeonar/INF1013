@@ -1,7 +1,10 @@
 package model;
 
+import java.io.BufferedReader;
 import java.io.Serializable;
 import java.util.Date;
+
+import com.google.gson.Gson;
 
 import model.enums.TipoExercicio;
 
@@ -12,17 +15,19 @@ public class Exercicio implements Serializable{
 	private String nome;
 	private Integer repeticoes;
 	private Date tempo;
-	private Integer tipoExercicio;
+	private TipoExercicio tipoExercicio;
+	private Aparelho aparelho;
 	
 	public Exercicio() {}
 
-	public Exercicio(Integer id, String nome, Integer repeticoes, Date tempo, TipoExercicio tipoExercicio) {
+	public Exercicio(Integer id, String nome, Integer repeticoes, Date tempo, TipoExercicio tipoExercicio, Aparelho aparelho) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.repeticoes = repeticoes;
 		this.tempo = tempo;
-		this.tipoExercicio = tipoExercicio.getCod();
+		this.tipoExercicio = tipoExercicio;
+		this.aparelho = aparelho;
 	}
 
 	public Integer getId() {
@@ -56,13 +61,21 @@ public class Exercicio implements Serializable{
 	public void setTempo(Date tempo) {
 		this.tempo = tempo;
 	}
-
+	
 	public TipoExercicio getTipoExercicio() {
-		return TipoExercicio.toEnum(tipoExercicio);
+		return tipoExercicio;
 	}
 
 	public void setTipoExercicio(TipoExercicio tipoExercicio) {
-		this.tipoExercicio = tipoExercicio.getCod();
+		this.tipoExercicio = tipoExercicio;
+	}
+
+	public Aparelho getAparelho() {
+		return aparelho;
+	}
+
+	public void setAparelho(Aparelho aparelho) {
+		this.aparelho = aparelho;
 	}
 
 	@Override
@@ -90,4 +103,16 @@ public class Exercicio implements Serializable{
 		return true;
 	};
 	
+	public static void deserializeExercicio(BufferedReader exJson, Exercicio exNovo)
+	{
+		Gson gson = new Gson();
+		Exercicio ex = gson.fromJson(exJson, Exercicio.class);
+		
+		exNovo.id = ex.id;
+		exNovo.nome = ex.nome;
+		exNovo.repeticoes = ex.repeticoes;
+		exNovo.tempo = ex.tempo;
+		exNovo.tipoExercicio = ex.tipoExercicio;
+		exNovo.aparelho = ex.aparelho;
+	}
 }

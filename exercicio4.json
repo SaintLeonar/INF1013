@@ -1,0 +1,11 @@
+{
+    "id": 4,
+    "nome": "Rosca Direta",
+    "repeticoes": 30,
+    "tipoExercicio": "COSTAS",
+    "aparelho": {
+        "id": 4,
+        "nome": "Cross",
+        "tipoExercicio": "COSTAS"
+    }
+}

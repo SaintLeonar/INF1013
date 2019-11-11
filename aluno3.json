@@ -1,0 +1,79 @@
+{
+    "id": 3,
+    "nome": "Patr�cia",
+    "email": "Pat@gmail.com",
+    "cpf": "00000000002",
+    "telefone": "552100000002",
+    "unidade": {
+        "id": 1,
+        "nome": "Unidade G�vea"
+    },
+    "professor": {
+        "id": 1,
+        "nome": "Paulo Silva",
+        "email": "Paulo@gmail.com",
+        "cpf": "11100011100",
+        "unidades": [
+            {
+                "id": 1,
+                "nome": "Unidade G�vea"
+            }
+        ]
+    },
+    "mensalidades": [
+        {
+            "id": 3,
+            "data": "Oct 3, 2019 12:00:00 AM",
+            "valor": 99.0,
+            "pagamento": {
+                "id": 3,
+                "dataVencimento": "Nov 3, 2019 1:00:00 AM",
+                "estado": "ATRASADO"
+            }
+        }
+    ],
+    "serieRealizada": [],
+    "serieEspecificada": {
+        "id": 3,
+        "dataInicio": "Oct 9, 2019 12:00:00 AM",
+        "dataFim": "Dec 9, 2019 12:00:00 AM",
+        "professor": {
+            "id": 1,
+            "nome": "Paulo Silva",
+            "email": "Paulo@gmail.com",
+            "cpf": "11100011100",
+            "unidades": [
+                {
+                    "id": 1,
+                    "nome": "Unidade G�vea"
+                }
+            ]
+        },
+        "exercicios": [
+            {
+                "id": 3,
+                "nome": "Remada Aberta",
+                "repeticoes": 30,
+                "tipoExercicio": "COSTAS",
+                "aparelho": {
+                    "id": 3,
+                    "nome": "Remada Máquina",
+                    "tipoAparelho": "MUSCULACAO",
+                    "tipoExercicio": "COSTAS"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Rosca Direta",
+                "repeticoes": 30,
+                "tipoExercicio": "COSTAS",
+                "aparelho": {
+                    "id": 4,
+                    "nome": "Cross",
+                    "tipoExercicio": "COSTAS"
+                }
+            }
+        ]
+    },
+    "estadoConta": "BLOQUEADA"
+}

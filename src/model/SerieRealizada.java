@@ -12,8 +12,9 @@ public class SerieRealizada implements Serializable{
 	
 	private Integer id;
 	private Date dataDeRealizacao;
-	private Integer estado;
-	private SerieEspecificada serieEspecificada;
+	private EstadoRealizacao estado;
+	
+	private transient SerieEspecificada serieEspecificada;
 	private List<Exercicio> exercicios = new ArrayList<>();
 	
 	public SerieRealizada() {};
@@ -22,7 +23,7 @@ public class SerieRealizada implements Serializable{
 		super();
 		this.id = id;
 		this.dataDeRealizacao = dataDeRealizacao;
-		this.estado = estado.getCod();
+		this.estado = estado;
 		this.serieEspecificada = serieEspecificada;
 	}
 	public Integer getId() {
@@ -37,12 +38,15 @@ public class SerieRealizada implements Serializable{
 	public void setDataDeRealizacao(Date dataDeRealizacao) {
 		this.dataDeRealizacao = dataDeRealizacao;
 	}
+	
 	public EstadoRealizacao getEstado() {
-		return EstadoRealizacao.toEnum(estado);
+		return estado;
 	}
+
 	public void setEstado(EstadoRealizacao estado) {
-		this.estado = estado.getCod();
+		this.estado = estado;
 	}
+
 	public SerieEspecificada getSerieEspecificada() {
 		return serieEspecificada;
 	}

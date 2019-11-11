@@ -1,0 +1,81 @@
+{
+    "id": 6,
+    "nome": "Ana",
+    "email": "Ana@gmail.com",
+    "cpf": "00000000005",
+    "telefone": "552100000005",
+    "unidade": {
+        "id": 1,
+        "nome": "Unidade G�vea"
+    },
+    "professor": {
+        "id": 2,
+        "nome": "Fernanda Santos",
+        "email": "Fernanda@gmail.com",
+        "cpf": "11100011122",
+        "unidades": [
+            {
+                "id": 1,
+                "nome": "Unidade G�vea"
+            }
+        ]
+    },
+    "mensalidades": [
+        {
+            "id": 6,
+            "data": "Oct 3, 2019 12:00:00 AM",
+            "valor": 99.0,
+            "pagamento": {
+                "id": 6,
+                "dataVencimento": "Nov 3, 2019 1:00:00 AM",
+                "dataPagamento": "Oct 25, 2019 12:00:00 AM",
+                "estado": "QUITADO"
+            }
+        }
+    ],
+    "serieRealizada": [],
+    "serieEspecificada": {
+        "id": 6,
+        "dataInicio": "Oct 9, 2019 12:00:00 AM",
+        "dataFim": "Nov 9, 2019 12:00:00 AM",
+        "professor": {
+            "id": 2,
+            "nome": "Fernanda Santos",
+            "email": "Fernanda@gmail.com",
+            "cpf": "11100011122",
+            "unidades": [
+                {
+                    "id": 1,
+                    "nome": "Unidade G�vea"
+                }
+            ]
+        },
+        "exercicios": [
+            {
+                "id": 5,
+                "nome": "Agachamento Completo",
+                "repeticoes": 30,
+                "tipoExercicio": "PERNAS",
+                "aparelho": {
+                    "id": 5,
+                    "nome": "Smith",
+                    "tipoAparelho": "MUSCULACAO",
+                    "tipoExercicio": "PERNAS"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "Desenvolvimento Ombro",
+                "repeticoes": 30,
+                "tipoExercicio": "OMBROS",
+                "aparelho": {
+                    "id": 6,
+                    "nome": "Desvolv. Ombro Máquina",
+                    "tipoAparelho": "MUSCULACAO",
+                    "tipoExercicio": "OMBROS"
+                }
+            }
+        ]
+    },
+    "estadoConta": "ATIVA"
+}

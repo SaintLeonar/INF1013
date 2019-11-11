@@ -1,0 +1,12 @@
+{
+    "id": 2,
+    "nome": "Tríceps Testa",
+    "repeticoes": 30,
+    "tipoExercicio": "TRICEPS",
+    "aparelho": {
+        "id": 2,
+        "nome": "Banco Reto",
+        "tipoAparelho": "MUSCULACAO",
+        "tipoExercicio": "TRICEPS"
+    }
+}

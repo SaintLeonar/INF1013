@@ -1,0 +1,12 @@
+{
+    "id": 6,
+    "nome": "Desenvolvimento Ombro",
+    "repeticoes": 30,
+    "tipoExercicio": "OMBROS",
+    "aparelho": {
+        "id": 6,
+        "nome": "Desvolv. Ombro Máquina",
+        "tipoAparelho": "MUSCULACAO",
+        "tipoExercicio": "OMBROS"
+    }
+}

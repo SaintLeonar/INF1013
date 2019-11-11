@@ -9,16 +9,19 @@ public class Pagamento {
 	private Integer id;
 	private Date dataVencimento;
 	private Date dataPagamento;
-	private Integer estado;
+	private EstadoPagamento estado;
+	
+	private transient Mensalidade mensalidade;
 	
 	public Pagamento() {}
 
-	public Pagamento(Integer id, EstadoPagamento estado, Date dataVencimento, Date dataPagamento) {
+	public Pagamento(Integer id, EstadoPagamento estado, Date dataVencimento, Date dataPagamento, Mensalidade mensalidade) {
 		super();
 		this.id = id;
 		this.dataVencimento = dataVencimento;
 		this.dataPagamento = dataPagamento;
-		this.estado = estado.getCod();
+		this.estado = estado;
+		this.mensalidade = mensalidade;
 	}
 
 	public Integer getId() {
@@ -44,13 +47,13 @@ public class Pagamento {
 	public void setDataPagamento(Date dataPagamento) {
 		this.dataPagamento = dataPagamento;
 	}
-	
+
 	public EstadoPagamento getEstado() {
-		return EstadoPagamento.toEnum(estado);
+		return estado;
 	}
 
 	public void setEstado(EstadoPagamento estado) {
-		this.estado = estado.getCod();
+		this.estado = estado;
 	}
 
 	@Override
@@ -59,6 +62,14 @@ public class Pagamento {
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
+	}
+	
+	public Mensalidade getMensalidade() {
+		return mensalidade;
+	}
+
+	public void setMensalidade(Mensalidade mensalidade) {
+		this.mensalidade = mensalidade;
 	}
 
 	@Override
