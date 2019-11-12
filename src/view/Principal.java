@@ -2,23 +2,20 @@ package view;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Scanner;
 
+import controller.ProfessorController;
 import controller.UnidadeController;
 import dao.FileJson;
 import model.Aluno;
-import model.Aparelho;
 import model.Exercicio;
 import model.Mensalidade;
 import model.Pagamento;
 import model.Professor;
 import model.SerieEspecificada;
-import model.SerieRealizada;
 import model.Unidade;
 import model.enums.EstadoConta;
 import model.enums.EstadoPagamento;
-import model.enums.EstadoRealizacao;
-import model.enums.TipoAparelho;
-import model.enums.TipoExercicio;
 
 public class Principal {
 
@@ -26,7 +23,7 @@ public class Principal {
 		
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); // Responsável pelas informações de data
-
+		Scanner scanner = new Scanner(System.in);
 		FileJson fileJson = new FileJson();
 		
 		// Cria Unidade
@@ -38,10 +35,6 @@ public class Principal {
 		professor1.getUnidades().addAll(Arrays.asList(unidade1));
 		professor2.getUnidades().addAll(Arrays.asList(unidade1));
 		
-		// Cria Aparelhos
-		Aparelho aparelho1 = new Aparelho(1, "Supino Máquina", TipoAparelho.MUSCULACAO, TipoExercicio.PEITORAIS);
-		Aparelho aparelho2 = new Aparelho(2, "Cross", null, TipoExercicio.PEITORAIS);
-		
 		// Cria Exercicios
 		Exercicio ex1 = new Exercicio();
 		Exercicio ex2 = new Exercicio();
@@ -50,12 +43,12 @@ public class Principal {
 		Exercicio ex5 = new Exercicio();
 		Exercicio ex6 = new Exercicio();
 		
-		Exercicio.deserializeExercicio(fileJson.read("exercicio1.json"), ex1);
-		Exercicio.deserializeExercicio(fileJson.read("exercicio2.json"), ex2);
-		Exercicio.deserializeExercicio(fileJson.read("exercicio3.json"), ex3);
-		Exercicio.deserializeExercicio(fileJson.read("exercicio4.json"), ex4);
-		Exercicio.deserializeExercicio(fileJson.read("exercicio5.json"), ex5);
-		Exercicio.deserializeExercicio(fileJson.read("exercicio6.json"), ex6);
+		Exercicio.deserialize(fileJson.read("exercicio1.json"), ex1);
+		Exercicio.deserialize(fileJson.read("exercicio2.json"), ex2);
+		Exercicio.deserialize(fileJson.read("exercicio3.json"), ex3);
+		Exercicio.deserialize(fileJson.read("exercicio4.json"), ex4);
+		Exercicio.deserialize(fileJson.read("exercicio5.json"), ex5);
+		Exercicio.deserialize(fileJson.read("exercicio6.json"), ex6);
 		
 		// Cria Alunos
 		Aluno aluno1 = new Aluno(1, "João", "Joao@gmail.com", "00000000000", "552100000000", unidade1, professor1, null, EstadoConta.ATIVA);
@@ -73,6 +66,8 @@ public class Principal {
 		Mensalidade mensalidade5 = new Mensalidade(5, sdf.parse("03/10/2019"), (float) 99.00, null, null);
 		Mensalidade mensalidade6 = new Mensalidade(6, sdf.parse("03/10/2019"), (float) 99.00, null, null);
 		
+		// Cada mensalidade tem um aluno, por isso criar uma mensalidade para cada aluno
+		// Mesmo que sejam mensalidades do mesmo mes
 		mensalidade1.setAluno(aluno1);
 		mensalidade2.setAluno(aluno2);
 		mensalidade3.setAluno(aluno3);
@@ -87,6 +82,7 @@ public class Principal {
 		Pagamento pagamento4 = new Pagamento(4, EstadoPagamento.QUITADO, sdf.parse("03/11/2019"), sdf.parse("30/10/2019"), null);
 		Pagamento pagamento5 = new Pagamento(5, EstadoPagamento.QUITADO, sdf.parse("03/11/2019"), sdf.parse("25/10/2019"), null);
 		Pagamento pagamento6 = new Pagamento(6, EstadoPagamento.QUITADO, sdf.parse("03/11/2019"), sdf.parse("25/10/2019"), null);
+		//                                                                        Data Validade            Data Pagamento
 		
 		mensalidade1.setPagamento(pagamento1);
 		pagamento1.setMensalidade(mensalidade1);
@@ -115,6 +111,7 @@ public class Principal {
 		SerieEspecificada serieEsp4 = new SerieEspecificada(4, sdf.parse("09/10/2019"), sdf.parse("09/12/2019"), aluno4, professor2);
 		SerieEspecificada serieEsp5 = new SerieEspecificada(5, sdf.parse("09/10/2019"), sdf.parse("03/11/2019"), aluno5, professor1);
 		SerieEspecificada serieEsp6 = new SerieEspecificada(6, sdf.parse("09/10/2019"), sdf.parse("09/11/2019"), aluno6, professor2);
+		//                                                                Data Inicio               Data Fim
 		
 		serieEsp1.getExercicios().addAll(Arrays.asList(ex1, ex2));
 		serieEsp2.getExercicios().addAll(Arrays.asList(ex1, ex2));
@@ -135,25 +132,21 @@ public class Principal {
 		
 		
 		/* Chamadas de Casos de Uso */
+
 		
-		Integer i = 1;
-		
-		/*Caso de Uso CDU4: bloquear conta ***********************************************************************************/
+		/* Caso de Uso CDU4: bloquear conta ***********************************************************************************/
 		UnidadeController unidadeCtrl = new UnidadeController();
 		unidadeCtrl.verificaInadimplencia(unidade1);
-		for(Aluno a : unidade1.getAlunos())
-		{
-			fileJson.save("aluno"+i+".json", a.serializeAluno(a));
-			i++;
-		}
 		/* Fim Caso de Uso CDU4: bloquear conta ******************************************************************************/
+		System.out.println("\n\n\n");
 		
-		i = 1;
-		for(Aluno a : unidade1.getAlunos())
-		{
-			fileJson.save("aluno"+i+".json", a.serializeAluno(a));
-			i++;
-		}
+		
+		/* Caso de Uso CDU2: especificar uma nova série ***********************************************************************************/
+		ProfessorController profCtrl = new ProfessorController();
+		profCtrl.especificaSerie(unidade1);
+		/* Fim Caso de Uso CDU2: especificar uma nova série ******************************************************************************/
+		
+		scanner.close();
 	}
 
 }

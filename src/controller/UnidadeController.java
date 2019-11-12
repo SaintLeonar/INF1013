@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Date;
 
+import dao.FileJson;
 import model.Aluno;
 import model.Mensalidade;
 import model.Pagamento;
@@ -27,6 +28,8 @@ public class UnidadeController {
 	public void verificaInadimplencia (Unidade unidade)
 	{
 		Date dataAtual = new Date(System.currentTimeMillis());
+		FileJson fileJson = new FileJson();
+		Integer i = 1;
 		
 		for(Aluno a : unidade.getAlunos()) // Verifica cada aluno
 		{
@@ -44,6 +47,13 @@ public class UnidadeController {
 					}
 				}
 			}
+		}
+		
+		/*Salvando Alterações da verificação do CDU4*/
+		for(Aluno a : unidade.getAlunos())
+		{
+			fileJson.save("aluno"+i+".json", a.serialize(a));
+			i++;
 		}
 		
 	}

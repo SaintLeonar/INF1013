@@ -11,7 +11,7 @@ public class Professor implements Serializable{
 	private String nome;
 	private String email;
 	private String cpf;
-	private List<Unidade> unidades = new ArrayList<>();
+	private transient List<Unidade> unidades = new ArrayList<>();
 	
 	private transient List<Aluno> alunos = new ArrayList<>();
 	

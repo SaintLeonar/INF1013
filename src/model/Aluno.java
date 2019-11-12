@@ -154,13 +154,13 @@ public class Aluno implements Serializable{
 		return true;
 	}
 	
-	public String serializeAluno(Aluno aluno)
+	public String serialize(Aluno aluno)
 	{
 		Gson gson = new Gson();
 		return gson.toJson(aluno);
 	}
 	
-	public static void deserializeAluno(BufferedReader alunoJson, Aluno alunoNovo)
+	public static void deserialize(BufferedReader alunoJson, Aluno alunoNovo)
 	{
 		Gson gson = new Gson();
 		Aluno aluno = gson.fromJson(alunoJson, Aluno.class);

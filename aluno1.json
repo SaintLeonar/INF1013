@@ -1,24 +1,18 @@
 {
     "id": 1,
-    "nome": "Joï¿½o",
+    "nome": "João",
     "email": "Joao@gmail.com",
     "cpf": "00000000000",
     "telefone": "552100000000",
     "unidade": {
         "id": 1,
-        "nome": "Unidade Gï¿½vea"
+        "nome": "Unidade Gávea"
     },
     "professor": {
         "id": 1,
         "nome": "Paulo Silva",
         "email": "Paulo@gmail.com",
-        "cpf": "11100011100",
-        "unidades": [
-            {
-                "id": 1,
-                "nome": "Unidade Gï¿½vea"
-            }
-        ]
+        "cpf": "11100011100"
     },
     "mensalidades": [
         {
@@ -42,13 +36,7 @@
             "id": 1,
             "nome": "Paulo Silva",
             "email": "Paulo@gmail.com",
-            "cpf": "11100011100",
-            "unidades": [
-                {
-                    "id": 1,
-                    "nome": "Unidade Gï¿½vea"
-                }
-            ]
+            "cpf": "11100011100"
         },
         "exercicios": [
             {

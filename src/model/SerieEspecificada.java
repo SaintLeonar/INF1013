@@ -1,9 +1,12 @@
 package model;
 
+import java.io.BufferedReader;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import com.google.gson.Gson;
 
 public class SerieEspecificada implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -110,4 +113,16 @@ public class SerieEspecificada implements Serializable{
 		return true;
 	}
 	
+	public void deserialize(BufferedReader exJson, SerieEspecificada seNovo)
+	{
+		Gson gson = new Gson();
+		SerieEspecificada se = gson.fromJson(exJson, SerieEspecificada.class);
+		
+		seNovo.id = se.id;
+		seNovo.dataInicio = se.dataInicio;
+		seNovo.dataFim = se.dataFim;
+		seNovo.professor = se.professor;
+		seNovo.setExercicios(se.exercicios);
+		seNovo.setSeriesRealizadas(se.seriesRealizadas);
+	}
 }

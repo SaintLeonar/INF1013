@@ -11,6 +11,7 @@ public class FileJson {
 	
 	public void save(String path, String json)
 	{
+		
 		try {
 	        FileWriter writer = new FileWriter(path);
 	        writer.write(json);

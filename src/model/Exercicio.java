@@ -103,7 +103,7 @@ public class Exercicio implements Serializable{
 		return true;
 	};
 	
-	public static void deserializeExercicio(BufferedReader exJson, Exercicio exNovo)
+	public static void deserialize(BufferedReader exJson, Exercicio exNovo)
 	{
 		Gson gson = new Gson();
 		Exercicio ex = gson.fromJson(exJson, Exercicio.class);

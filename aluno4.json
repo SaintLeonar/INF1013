@@ -12,13 +12,7 @@
         "id": 2,
         "nome": "Fernanda Santos",
         "email": "Fernanda@gmail.com",
-        "cpf": "11100011122",
-        "unidades": [
-            {
-                "id": 1,
-                "nome": "Unidade G�vea"
-            }
-        ]
+        "cpf": "11100011122"
     },
     "mensalidades": [
         {
@@ -42,13 +36,7 @@
             "id": 2,
             "nome": "Fernanda Santos",
             "email": "Fernanda@gmail.com",
-            "cpf": "11100011122",
-            "unidades": [
-                {
-                    "id": 1,
-                    "nome": "Unidade G�vea"
-                }
-            ]
+            "cpf": "11100011122"
         },
         "exercicios": [
             {
