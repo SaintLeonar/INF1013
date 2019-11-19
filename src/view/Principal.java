@@ -2,10 +2,7 @@ package view;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Scanner;
 
-import controller.ProfessorController;
-import controller.UnidadeController;
 import dao.FileJson;
 import model.Aluno;
 import model.Exercicio;
@@ -23,7 +20,6 @@ public class Principal {
 		
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); // Responsável pelas informações de data
-		Scanner scanner = new Scanner(System.in);
 		FileJson fileJson = new FileJson();
 		
 		// Cria Unidade
@@ -133,20 +129,9 @@ public class Principal {
 		
 		/* Chamadas de Casos de Uso */
 
+		MenuPrincipal menuPrincipal = new MenuPrincipal();
+		menuPrincipal.ShowMenu(unidade1);
 		
-		/* Caso de Uso CDU4: bloquear conta ***********************************************************************************/
-		UnidadeController unidadeCtrl = new UnidadeController();
-		unidadeCtrl.verificaInadimplencia(unidade1);
-		/* Fim Caso de Uso CDU4: bloquear conta ******************************************************************************/
-		System.out.println("\n\n\n");
-		
-		
-		/* Caso de Uso CDU2: especificar uma nova série ***********************************************************************************/
-		ProfessorController profCtrl = new ProfessorController();
-		profCtrl.especificaSerie(unidade1);
-		/* Fim Caso de Uso CDU2: especificar uma nova série ******************************************************************************/
-		
-		scanner.close();
 	}
 
 }

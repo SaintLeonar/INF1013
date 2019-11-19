@@ -11,6 +11,7 @@ import model.Aluno;
 import model.SerieEspecificada;
 import model.Unidade;
 import model.enums.EstadoConta;
+import view.MenuPrincipal;
 
 /**
  * 
@@ -48,10 +49,11 @@ public class ProfessorController {
 		return alunos;
 	}
 	
-	public static Aluno escolheAluno(List<Aluno> alunos, Scanner scanner)
+	public static Aluno escolheAluno(List<Aluno> alunos)
 	{
 		Integer i = 0;
-		//Scanner scanner = new Scanner(System.in);
+		MenuPrincipal menuPrinical = new MenuPrincipal();
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("(!) Decida qual aluno abaixo receberá a nova série\n(!) Defina a série .json dela\n\n(?) Escolha o aluno que irá receber a Nova série que você especificou no .json:\n");
 		for(Aluno a : alunos)
 		{
@@ -69,6 +71,7 @@ public class ProfessorController {
 		}
 		
 		System.out.println("Você escolheu Cancelar");
+		menuPrinical.ShowMenu(alunos.get(0).getUnidade());
 		return null; 
 	}
 	
@@ -79,8 +82,9 @@ public class ProfessorController {
 		SerieEspecificada serieEsp = new SerieEspecificada();
 		FileJson fileJson = new FileJson();
 		
-		Aluno al = ProfessorController.escolheAluno(ProfessorController.listaAlunos(unidade), scanner);
+		Aluno al = ProfessorController.escolheAluno(ProfessorController.listaAlunos(unidade));
 		System.out.println("(>) Você escolheu especificar uma nova série para: "+al.getNome()+"\n(?) Digite o path do .json que você especificou: ");
+		scanner.hasNextLine();
 		String pathJson = scanner.nextLine();
 		File file = new File(pathJson);
 		
@@ -95,7 +99,6 @@ public class ProfessorController {
 		al.setSerieEspecificada(serieEsp);
 		fileJson.save("aluno"+al.getId()+".json", al.serialize(al));
 		System.out.println("(>) Série Especificada!");
-		scanner.close();
 	}
 	
 }

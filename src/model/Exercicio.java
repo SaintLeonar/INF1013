@@ -83,6 +83,8 @@ public class Exercicio implements Serializable{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((repeticoes == null) ? 0 : repeticoes.hashCode());
+		result = prime * result + ((tempo == null) ? 0 : tempo.hashCode());
 		return result;
 	}
 
@@ -100,9 +102,19 @@ public class Exercicio implements Serializable{
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (repeticoes == null) {
+			if (other.repeticoes != null)
+				return false;
+		} else if (!repeticoes.equals(other.repeticoes))
+			return false;
+		if (tempo == null) {
+			if (other.tempo != null)
+				return false;
+		} else if (!tempo.equals(other.tempo))
+			return false;
 		return true;
-	};
-	
+	}
+
 	public static void deserialize(BufferedReader exJson, Exercicio exNovo)
 	{
 		Gson gson = new Gson();

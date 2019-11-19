@@ -32,11 +32,11 @@ public class Mensalidade implements Serializable{
 		this.id = id;
 	}
 
-	public Date getMes() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setMes(Date data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 

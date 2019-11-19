@@ -112,6 +112,11 @@ public class Aluno implements Serializable{
 	public void setSerieRealizada(List<SerieRealizada> serieRealizada) {
 		this.serieRealizada = serieRealizada;
 	}
+	
+	public void addSerieRealizada(SerieRealizada serieRealizada)
+	{
+		this.serieRealizada.add(serieRealizada);
+	}
 
 	public SerieEspecificada getSerieEspecificada() {
 		return serieEspecificada;
@@ -127,6 +132,19 @@ public class Aluno implements Serializable{
 
 	public void setEstado(EstadoConta estadoConta) {
 		this.estadoConta = estadoConta;
+	}
+	
+	public List<Exercicio> getExerciciosSEsp() {
+		return this.getSerieEspecificada().getExercicios();
+	}
+	
+	/**
+	 * 
+	 *  Retorna a lista de Exercicios da ultima série Realizada
+	 * 
+	 * */
+	public List<Exercicio> getExerciciosLastSRea() {
+		return this.getSerieRealizada().get(this.getSerieRealizada().size()-1).getExercicios();
 	}
 
 	@Override

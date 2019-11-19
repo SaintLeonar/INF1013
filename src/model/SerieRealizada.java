@@ -1,9 +1,12 @@
 package model;
 
+import java.io.BufferedReader;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import com.google.gson.Gson;
 
 import model.enums.EstadoRealizacao;
 
@@ -83,5 +86,21 @@ public class SerieRealizada implements Serializable{
 		return true;
 	}
 	
+	public String serialize(SerieRealizada serieRealizada)
+	{
+		Gson gson = new Gson();
+		return gson.toJson(serieRealizada);
+	}
 	
+	public static void deserialize(BufferedReader serieRealizadaJson, SerieRealizada serieReaNova)
+	{
+		Gson gson = new Gson();
+		SerieRealizada serieRea = gson.fromJson(serieRealizadaJson, SerieRealizada.class);
+		
+		serieReaNova.id = serieRea.id;
+		serieReaNova.dataDeRealizacao = serieRea.dataDeRealizacao;
+		serieReaNova.estado = serieRea.estado;
+		serieReaNova.serieEspecificada = serieRea.serieEspecificada;
+		serieReaNova.setExercicios(serieRea.exercicios);
+	}
 }

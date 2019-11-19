@@ -44,6 +44,7 @@ public class UnidadeController {
 						a.setEstado(EstadoConta.BLOQUEADA); // Bloqueia conta
 						p.setEstado(EstadoPagamento.ATRASADO); // Pagamento está atrasado
 						System.out.println("Aluno de ID: " +a.getId()+ " Teve seu estado de conta alterado para " +a.getEstado());
+						fileJson.save("Aluno"+a.getId()+".json", a.serialize(a));
 					}
 				}
 			}
