@@ -60,7 +60,7 @@ public class ProfessorController {
 			System.out.println("("+i+ ") - " +a.getNome());
 			i++;
 		}
-		System.out.println("(else) - Cancela ação");
+		System.out.println("(else) - Retornar ao Menu Principal");
 		
 		Integer index = (int)scanner.next().charAt(0) - 48;
 		scanner.nextLine(); // Limpa o buffer do scanner

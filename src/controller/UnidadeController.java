@@ -10,21 +10,22 @@ import model.Unidade;
 import model.enums.EstadoConta;
 import model.enums.EstadoPagamento;
 
+
+/**
+ * 
+ * 	Caso de Uso CDU4: bloquear conta
+ * 
+ * 	1. Verifica o pagamento de mensalidades do aluno
+ *  2. Sistema não identifica inadimplência
+ *  2a. Sistema identifica inadimplência
+ *  	1.Sistema bloqueia conta do aluno.
+ *  3. Repete passo 1 e 2 até todos os alunos sejam verificados
+ * 
+ * */
 public class UnidadeController {
 	
 	public UnidadeController(){}
 	
-	/**
-	 * 
-	 * 	Caso de Uso CDU4: bloquear conta
-	 * 
-	 * 	1. Verifica o pagamento de mensalidades do aluno
-	 *  2. Sistema não identifica inadimplência
-	 *  2a. Sistema identifica inadimplência
-	 *  	1.Sistema bloqueia conta do aluno.
-	 *  3. Repete passo 1 e 2 até todos os alunos sejam verificados
-	 * 
-	 * */
 	public void verificaInadimplencia (Unidade unidade)
 	{
 		Date dataAtual = new Date(System.currentTimeMillis());

@@ -2,8 +2,10 @@ package view;
 
 import java.util.Scanner;
 
+import controller.AlunoController;
 import controller.ProfessorController;
 import controller.UnidadeController;
+import model.Aluno;
 import model.Unidade;
 
 public class MenuPrincipal {
@@ -15,6 +17,8 @@ public class MenuPrincipal {
 		Scanner scanner = new Scanner(System.in);
 		UnidadeController unidadeCtrl = new UnidadeController();
 		ProfessorController profCtrl = new ProfessorController();
+		
+		AlunoView alunoView = new AlunoView();
 		
 		System.out.println("- MENU PRINCIPAL -\n\n(1) Verificar Inadimplencias (CDU4)\n(2) Menu do Professor\n(3) Menu do Aluno\n(else) Finalizar Sistema");
 		Integer escolha = (int)scanner.next().charAt(0) - 48;
@@ -39,8 +43,10 @@ public class MenuPrincipal {
 			break;
 			
 		case 3:
+			System.out.println("(?) Quem é você?\n");
+			Aluno a = AlunoController.escolheAluno(unidade.getAlunos());
+			alunoView.showMenu(a);
 			
-			System.out.println("Menu Aluno");
 			break;
 
 		default:

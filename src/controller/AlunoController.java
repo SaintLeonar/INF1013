@@ -1,12 +1,18 @@
 package controller;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 import dao.FileJson;
 import model.Aluno;
+import model.SerieEspecificada;
 import model.SerieRealizada;
+import model.Unidade;
+import model.enums.EstadoConta;
+import view.MenuPrincipal;
 
 /**
  * 
@@ -30,6 +36,33 @@ import model.SerieRealizada;
 public class AlunoController {
 	
 	public AlunoController() {}
+	
+	public static Aluno escolheAluno(List<Aluno> alunos)
+	{
+		Integer i = 0;
+		MenuPrincipal menuPrincipal = new MenuPrincipal();
+		Scanner scanner = new Scanner(System.in);
+		
+		for(Aluno a : alunos)
+		{
+			System.out.println("("+i+ ") - " +a.getNome());
+			i++;
+		}
+		System.out.println("(else) - Retornar ao Menu Principal");
+		
+		Integer index = (int)scanner.next().charAt(0) - 48;
+		scanner.nextLine(); // Limpa o buffer do scanner
+		
+		if(index >= 0 && index < alunos.size())
+		{
+			return alunos.get(index);
+		}
+		
+		System.out.println("Retornando ao Menu Principal...\n");
+		System.out.println("----------------------------------------------------------------------");
+		menuPrincipal.ShowMenu(alunos.get(0).getUnidade());
+		return null; 
+	}
 	
 	public void realizaSerie(Aluno aluno)
 	{
