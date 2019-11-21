@@ -18,7 +18,7 @@ public class SerieRealizada implements Serializable{
 	private EstadoRealizacao estado;
 	
 	private transient SerieEspecificada serieEspecificada;
-	private List<Exercicio> exercicios = new ArrayList<>();
+	private transient List<Exercicio> exercicios = new ArrayList<>();
 	
 	public SerieRealizada() {};
 	

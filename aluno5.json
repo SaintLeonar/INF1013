@@ -1,1 +1,69 @@
-{"id":5,"nome":"Maria","email":"Maria@gmail.com","cpf":"00000000004","telefone":"552100000004","unidade":{"id":1,"nome":"Unidade G�vea"},"professor":{"id":1,"nome":"Paulo Silva","email":"Paulo@gmail.com","cpf":"11100011100"},"mensalidades":[{"id":5,"data":"Oct 3, 2019 12:00:00 AM","valor":99.0,"pagamento":{"id":5,"dataVencimento":"Nov 3, 2019 12:00:00 AM","dataPagamento":"Oct 25, 2019 12:00:00 AM","estado":"QUITADO"}}],"serieRealizada":[],"serieEspecificada":{"id":5,"dataInicio":"Oct 9, 2019 12:00:00 AM","dataFim":"Nov 3, 2019 12:00:00 AM","professor":{"id":1,"nome":"Paulo Silva","email":"Paulo@gmail.com","cpf":"11100011100"},"exercicios":[{"id":5,"nome":"Agachamento Completo","repeticoes":30,"tipoExercicio":"PERNAS","aparelho":{"id":5,"nome":"Smith","tipoAparelho":"MUSCULACAO","tipoExercicio":"PERNAS"}},{"id":6,"nome":"Desenvolvimento Ombro","repeticoes":30,"tipoExercicio":"OMBROS","aparelho":{"id":6,"nome":"Desvolv. Ombro Máquina","tipoAparelho":"MUSCULACAO","tipoExercicio":"OMBROS"}}]},"estadoConta":"ATIVA"}
+{
+    "id": 5,
+    "nome": "Maria",
+    "email": "Maria@gmail.com",
+    "cpf": "00000000004",
+    "telefone": "552100000004",
+    "unidade": {
+        "id": 1,
+        "nome": "Unidade G�vea"
+    },
+    "professor": {
+        "id": 1,
+        "nome": "Paulo Silva",
+        "email": "Paulo@gmail.com",
+        "cpf": "11100011100"
+    },
+    "mensalidades": [
+        {
+            "id": 5,
+            "data": "Oct 3, 2019 12:00:00 AM",
+            "valor": 99.0,
+            "pagamento": {
+                "id": 5,
+                "dataVencimento": "Nov 3, 2019 12:00:00 AM",
+                "dataPagamento": "Oct 25, 2019 12:00:00 AM",
+                "estado": "QUITADO"
+            }
+        }
+    ],
+    "serieRealizada": [],
+    "serieEspecificada": {
+        "id": 5,
+        "dataInicio": "Oct 9, 2019 12:00:00 AM",
+        "dataFim": "Nov 3, 2019 12:00:00 AM",
+        "professor": {
+            "id": 1,
+            "nome": "Paulo Silva",
+            "email": "Paulo@gmail.com",
+            "cpf": "11100011100"
+        },
+        "exercicios": [
+            {
+                "id": 5,
+                "nome": "Agachamento Completo",
+                "repeticoes": 30,
+                "tipoExercicio": "PERNAS",
+                "aparelho": {
+                    "id": 5,
+                    "nome": "Smith",
+                    "tipoAparelho": "MUSCULACAO",
+                    "tipoExercicio": "PERNAS"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "Desenvolvimento Ombro",
+                "repeticoes": 30,
+                "tipoExercicio": "OMBROS",
+                "aparelho": {
+                    "id": 6,
+                    "nome": "Desvolv. Ombro Máquina",
+                    "tipoAparelho": "MUSCULACAO",
+                    "tipoExercicio": "OMBROS"
+                }
+            }
+        ]
+    },
+    "estadoConta": "ATIVA"
+}

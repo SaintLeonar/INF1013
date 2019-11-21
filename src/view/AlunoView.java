@@ -2,6 +2,7 @@ package view;
 
 import java.util.Scanner;
 
+import controller.AlunoController;
 import model.Aluno;
 import model.Unidade;
 import model.enums.EstadoConta;
@@ -10,9 +11,9 @@ public class AlunoView {
 	
 	public AlunoView() {}
 
-	public void showMenu(Aluno aluno) {
-		
-		MenuPrincipal menuPrincipal = new MenuPrincipal();
+	public void showMenu(Aluno aluno, MenuPrincipal menuPrincipal) {
+
+		AlunoController alunoCtrl = new AlunoController();
 		Scanner scanner = new Scanner(System.in);
 		Integer escolha;
 		
@@ -47,7 +48,9 @@ public class AlunoView {
 				break;
 
 			case 1:
-				// REALIZAR SÉRIE
+				alunoCtrl.realizaSerie(aluno);
+				System.out.println("Série Realizada!");
+				menuPrincipal.ShowMenu(aluno.getUnidade());
 				break;	
 				
 			default:

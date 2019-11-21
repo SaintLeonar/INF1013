@@ -37,6 +37,11 @@ public class AlunoController {
 	
 	public AlunoController() {}
 	
+	/**
+	 * 
+	 * 	Lista alunos e retorna um Aluno da lista escolhido via input
+	 * 
+	 * */
 	public static Aluno escolheAluno(List<Aluno> alunos)
 	{
 		Integer i = 0;
@@ -64,6 +69,13 @@ public class AlunoController {
 		return null; 
 	}
 	
+	
+	
+	/**
+	 * 
+	 *  Realiza uma série do aluno recebido nos parâmetros
+	 * 
+	 * */
 	public void realizaSerie(Aluno aluno)
 	{
 		Date dataAtual = new Date(System.currentTimeMillis());
@@ -83,19 +95,11 @@ public class AlunoController {
 		
 		SerieRealizada serieRea = new SerieRealizada();
 		SerieRealizada.deserialize(fileJson.read(pathJson), serieRea);
+		serieRea.setDataDeRealizacao(dataAtual);
+		serieRea.setSerieEspecificada(aluno.getSerieEspecificada());
+		
 		aluno.addSerieRealizada(serieRea);
+		fileJson.save("aluno"+aluno.getId()+".json", aluno.serialize(aluno));
 		
-		/*
-		Integer numExSE = aluno.getExerciciosSEsp().size();
-		Integer numExRE = aluno.getSerieRealizada().get(aluno.getSerieRealizada().size()-1).getExercicios().size();
-		
-		for(Integer i = 0 ; i < numExSE ; i++)
-		{
-			System.out.println(aluno.getExerciciosSEsp().get(i));
-			System.out.println();
-		}
-		*/
-		
-		scanner.close();
 	}
 }

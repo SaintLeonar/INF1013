@@ -45,7 +45,7 @@ public class MenuPrincipal {
 		case 3:
 			System.out.println("(?) Quem é você?\n");
 			Aluno a = AlunoController.escolheAluno(unidade.getAlunos());
-			alunoView.showMenu(a);
+			alunoView.showMenu(a, this);
 			
 			break;
 
