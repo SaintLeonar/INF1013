@@ -178,7 +178,7 @@ public class Aluno implements Serializable{
 		return gson.toJson(aluno);
 	}
 	
-	public static void deserialize(BufferedReader alunoJson, Aluno alunoNovo)
+	public void deserialize(BufferedReader alunoJson, Aluno alunoNovo)
 	{
 		Gson gson = new Gson();
 		Aluno aluno = gson.fromJson(alunoJson, Aluno.class);

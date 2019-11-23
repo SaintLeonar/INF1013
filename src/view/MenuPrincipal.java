@@ -20,7 +20,7 @@ public class MenuPrincipal {
 		
 		AlunoView alunoView = new AlunoView();
 		
-		System.out.println("- MENU PRINCIPAL -\n\n(1) Verificar Inadimplencias (CDU4)\n(2) Menu do Professor\n(3) Menu do Aluno\n(else) Finalizar Sistema");
+		System.out.println("- MENU PRINCIPAL -\n\n(1) Verificar Inadimplencias\n(2) Menu do Professor\n(3) Menu do Aluno\n(else) Finalizar Sistema");
 		Integer escolha = (int)scanner.next().charAt(0) - 48;
 		
 		switch (escolha) {
@@ -44,8 +44,8 @@ public class MenuPrincipal {
 			
 		case 3:
 			System.out.println("(?) Quem é você?\n");
-			Aluno a = AlunoController.escolheAluno(unidade.getAlunos());
-			alunoView.showMenu(a, this);
+			Aluno a = AlunoController.escolheAluno(unidade.getAlunos(), unidade);
+			alunoView.showMenu(a, this, unidade);
 			
 			break;
 

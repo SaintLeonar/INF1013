@@ -43,7 +43,7 @@ public class AlunoController {
 	 * 	Lista alunos e retorna um Aluno da lista escolhido via input
 	 * 
 	 * */
-	public static Aluno escolheAluno(List<Aluno> alunos)
+	public static Aluno escolheAluno(List<Aluno> alunos, Unidade unidade)
 	{
 		Integer i = 0;
 		MenuPrincipal menuPrincipal = new MenuPrincipal();
@@ -66,7 +66,7 @@ public class AlunoController {
 		
 		System.out.println("Retornando ao Menu Principal...\n");
 		System.out.println("----------------------------------------------------------------------");
-		menuPrincipal.ShowMenu(alunos.get(0).getUnidade());
+		menuPrincipal.ShowMenu(unidade);
 		return null; 
 	}
 	
