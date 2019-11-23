@@ -27,11 +27,264 @@
             }
         }
     ],
-    "serieRealizada": [],
+    "serieRealizada": [
+        {
+            "id": 1,
+            "dataDeRealizacao": "Nov 22, 2019 9:15:13 PM",
+            "estado": "COMPLETO",
+            "exercicios": [
+                {
+                    "id": 1,
+                    "nome": "Supino Maquina",
+                    "repeticoes": 30,
+                    "tipoExercicio": "PEITORAIS",
+                    "aparelho": {
+                        "id": 1,
+                        "nome": "Supino Maquina",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "PEITORAIS"
+                    }
+                },
+                {
+                    "id": 2,
+                    "nome": "Triceps Testa",
+                    "repeticoes": 30,
+                    "tipoExercicio": "TRICEPS",
+                    "aparelho": {
+                        "id": 2,
+                        "nome": "Banco Reto",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "TRICEPS"
+                    }
+                },
+                {
+                    "id": 3,
+                    "nome": "Remada Aberta",
+                    "repeticoes": 30,
+                    "tipoExercicio": "COSTAS",
+                    "aparelho": {
+                        "id": 3,
+                        "nome": "Remada Maquina",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "COSTAS"
+                    }
+                },
+                {
+                    "id": 4,
+                    "nome": "Rosca Direta",
+                    "repeticoes": 30,
+                    "tipoExercicio": "COSTAS",
+                    "aparelho": {
+                        "id": 4,
+                        "nome": "Cross",
+                        "tipoExercicio": "COSTAS"
+                    }
+                },
+                {
+                    "id": 5,
+                    "nome": "Agachamento Completo",
+                    "repeticoes": 30,
+                    "tipoExercicio": "PERNAS",
+                    "aparelho": {
+                        "id": 5,
+                        "nome": "Smith",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "PERNAS"
+                    }
+                },
+                {
+                    "id": 6,
+                    "nome": "Desenvolvimento Ombro",
+                    "repeticoes": 30,
+                    "tipoExercicio": "OMBROS",
+                    "aparelho": {
+                        "id": 6,
+                        "nome": "Desvolv. Ombro Maquina",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "OMBROS"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "dataDeRealizacao": "Nov 22, 2019 9:15:26 PM",
+            "estado": "IMCOMPLETO",
+            "exercicios": [
+                {
+                    "id": 1,
+                    "nome": "Supino Maquina",
+                    "repeticoes": 30,
+                    "tipoExercicio": "PEITORAIS",
+                    "aparelho": {
+                        "id": 1,
+                        "nome": "Supino Maquina",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "PEITORAIS"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "dataDeRealizacao": "Nov 22, 2019 9:15:55 PM",
+            "estado": "IMCOMPLETO",
+            "exercicios": [
+                {
+                    "id": 7,
+                    "nome": "Supino Reto HBC",
+                    "repeticoes": 30,
+                    "tipoExercicio": "PEITORAIS",
+                    "aparelho": {
+                        "id": 7,
+                        "nome": "Banco Reto",
+                        "tipoExercicio": "PEITORAIS"
+                    }
+                },
+                {
+                    "id": 2,
+                    "nome": "Triceps Testa",
+                    "repeticoes": 30,
+                    "tipoExercicio": "TRICEPS",
+                    "aparelho": {
+                        "id": 2,
+                        "nome": "Banco Reto",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "TRICEPS"
+                    }
+                },
+                {
+                    "id": 3,
+                    "nome": "Remada Aberta",
+                    "repeticoes": 30,
+                    "tipoExercicio": "COSTAS",
+                    "aparelho": {
+                        "id": 3,
+                        "nome": "Remada Maquina",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "COSTAS"
+                    }
+                },
+                {
+                    "id": 4,
+                    "nome": "Rosca Direta",
+                    "repeticoes": 30,
+                    "tipoExercicio": "COSTAS",
+                    "aparelho": {
+                        "id": 4,
+                        "nome": "Cross",
+                        "tipoExercicio": "COSTAS"
+                    }
+                },
+                {
+                    "id": 5,
+                    "nome": "Agachamento Completo",
+                    "repeticoes": 30,
+                    "tipoExercicio": "PERNAS",
+                    "aparelho": {
+                        "id": 5,
+                        "nome": "Smith",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "PERNAS"
+                    }
+                },
+                {
+                    "id": 6,
+                    "nome": "Desenvolvimento Ombro",
+                    "repeticoes": 30,
+                    "tipoExercicio": "OMBROS",
+                    "aparelho": {
+                        "id": 6,
+                        "nome": "Desvolv. Ombro Maquina",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "OMBROS"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "dataDeRealizacao": "Nov 22, 2019 9:17:10 PM",
+            "estado": "IMCOMPLETO",
+            "exercicios": [
+                {
+                    "id": 1,
+                    "nome": "Supino Maquina",
+                    "repeticoes": 18,
+                    "tipoExercicio": "PEITORAIS",
+                    "aparelho": {
+                        "id": 1,
+                        "nome": "Supino Maquina",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "PEITORAIS"
+                    }
+                },
+                {
+                    "id": 2,
+                    "nome": "Triceps Testa",
+                    "repeticoes": 30,
+                    "tipoExercicio": "TRICEPS",
+                    "aparelho": {
+                        "id": 2,
+                        "nome": "Banco Reto",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "TRICEPS"
+                    }
+                },
+                {
+                    "id": 3,
+                    "nome": "Remada Aberta",
+                    "repeticoes": 30,
+                    "tipoExercicio": "COSTAS",
+                    "aparelho": {
+                        "id": 3,
+                        "nome": "Remada Maquina",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "COSTAS"
+                    }
+                },
+                {
+                    "id": 4,
+                    "nome": "Rosca Direta",
+                    "repeticoes": 30,
+                    "tipoExercicio": "COSTAS",
+                    "aparelho": {
+                        "id": 4,
+                        "nome": "Cross",
+                        "tipoExercicio": "COSTAS"
+                    }
+                },
+                {
+                    "id": 5,
+                    "nome": "Agachamento Completo",
+                    "repeticoes": 30,
+                    "tipoExercicio": "PERNAS",
+                    "aparelho": {
+                        "id": 5,
+                        "nome": "Smith",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "PERNAS"
+                    }
+                },
+                {
+                    "id": 6,
+                    "nome": "Desenvolvimento Ombro",
+                    "repeticoes": 30,
+                    "tipoExercicio": "OMBROS",
+                    "aparelho": {
+                        "id": 6,
+                        "nome": "Desvolv. Ombro Maquina",
+                        "tipoAparelho": "MUSCULACAO",
+                        "tipoExercicio": "OMBROS"
+                    }
+                }
+            ]
+        }
+    ],
     "serieEspecificada": {
-        "id": 5,
-        "dataInicio": "Oct 9, 2019 12:00:00 AM",
-        "dataFim": "Nov 3, 2019 12:00:00 AM",
+        "id": 10,
+        "dataInicio": "Nov 22, 2019 9:14:41 PM",
+        "dataFim": "Jan 1, 2020 12:00:00 AM",
         "professor": {
             "id": 1,
             "nome": "Paulo Silva",
@@ -39,6 +292,53 @@
             "cpf": "11100011100"
         },
         "exercicios": [
+            {
+                "id": 1,
+                "nome": "Supino Maquina",
+                "repeticoes": 30,
+                "tipoExercicio": "PEITORAIS",
+                "aparelho": {
+                    "id": 1,
+                    "nome": "Supino Maquina",
+                    "tipoAparelho": "MUSCULACAO",
+                    "tipoExercicio": "PEITORAIS"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "Triceps Testa",
+                "repeticoes": 30,
+                "tipoExercicio": "TRICEPS",
+                "aparelho": {
+                    "id": 2,
+                    "nome": "Banco Reto",
+                    "tipoAparelho": "MUSCULACAO",
+                    "tipoExercicio": "TRICEPS"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Remada Aberta",
+                "repeticoes": 30,
+                "tipoExercicio": "COSTAS",
+                "aparelho": {
+                    "id": 3,
+                    "nome": "Remada Maquina",
+                    "tipoAparelho": "MUSCULACAO",
+                    "tipoExercicio": "COSTAS"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Rosca Direta",
+                "repeticoes": 30,
+                "tipoExercicio": "COSTAS",
+                "aparelho": {
+                    "id": 4,
+                    "nome": "Cross",
+                    "tipoExercicio": "COSTAS"
+                }
+            },
             {
                 "id": 5,
                 "nome": "Agachamento Completo",
@@ -58,7 +358,7 @@
                 "tipoExercicio": "OMBROS",
                 "aparelho": {
                     "id": 6,
-                    "nome": "Desvolv. Ombro Máquina",
+                    "nome": "Desvolv. Ombro Maquina",
                     "tipoAparelho": "MUSCULACAO",
                     "tipoExercicio": "OMBROS"
                 }

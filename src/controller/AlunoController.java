@@ -12,6 +12,7 @@ import model.SerieEspecificada;
 import model.SerieRealizada;
 import model.Unidade;
 import model.enums.EstadoConta;
+import model.enums.EstadoRealizacao;
 import view.MenuPrincipal;
 
 /**
@@ -69,7 +70,30 @@ public class AlunoController {
 		return null; 
 	}
 	
-	
+	/**
+	 * 
+	 * 	Retorna TRUE se a série realizada for identica a série especificada
+	 *  Senão, retorna FALSE
+	 * 
+	 * */
+	public boolean avaliaSerie(SerieEspecificada serieEsp, SerieRealizada serieRea)
+	{
+		// Se as séries de inicio já não tiverem o mesmo tamanho ja é FALSO
+		if(serieRea.getExercicios().size() != serieEsp.getExercicios().size())
+		{
+			System.out.println(serieEsp.getExercicios().size()+" "+serieRea.getExercicios().size());
+			return false;
+		}
+		
+		for(Integer i = 0 ; i < serieEsp.getExercicios().size() ; i++)
+		{
+			if(!serieRea.getExercicios().get(i).equals(serieEsp.getExercicios().get(i)))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
 	
 	/**
 	 * 
@@ -98,8 +122,30 @@ public class AlunoController {
 		serieRea.setDataDeRealizacao(dataAtual);
 		serieRea.setSerieEspecificada(aluno.getSerieEspecificada());
 		
+		if(!this.avaliaSerie(aluno.getSerieEspecificada(), serieRea))
+		{
+			System.out.println("(!) Você realizou sua série incompletamente!\n(?) Deseja declarar como substituta?\n\n(0) Sim (COMPLETO)\n(else) Não (INCOMPLETA)\n");
+			Integer escolha = (int)scanner.next().charAt(0) - 48;
+			
+			if(escolha == 0)
+			{
+				serieRea.setEstado(EstadoRealizacao.COMPLETO); // Substituta
+			}
+			else
+			{
+				serieRea.setEstado(EstadoRealizacao.IMCOMPLETO); // Não-Substituta
+			}
+			
+		}
+		else
+		{
+			serieRea.setEstado(EstadoRealizacao.COMPLETO); // Completo
+		}
+		
 		aluno.addSerieRealizada(serieRea);
+		
 		fileJson.save("aluno"+aluno.getId()+".json", aluno.serialize(aluno));
 		
 	}
+	
 }

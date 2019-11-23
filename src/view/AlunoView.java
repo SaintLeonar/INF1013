@@ -39,7 +39,7 @@ public class AlunoView {
 		}
 		else
 		{
-			System.out.println("Sua Conta está ATIVA!\n\n(0) Pagar Conta (Não Implementado)\n(1) Realizar Série (Não Implementado)\n(else) - Retornar ao Menu Principal");
+			System.out.println("Sua Conta está ATIVA!\n\n(0) Pagar Conta (Não Implementado)\n(1) Realizar Série\n(else) - Retornar ao Menu Principal");
 			escolha = (int)scanner.next().charAt(0) - 48;
 			
 			switch (escolha) {
@@ -49,7 +49,8 @@ public class AlunoView {
 
 			case 1:
 				alunoCtrl.realizaSerie(aluno);
-				System.out.println("Série Realizada!");
+				System.out.println("Série Realizada!\n");
+				System.out.println("----------------------------------------------------------------------");
 				menuPrincipal.ShowMenu(aluno.getUnidade());
 				break;	
 				
